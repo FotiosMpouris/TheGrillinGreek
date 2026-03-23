@@ -220,7 +220,7 @@ header {
 #home-page .hero-main {
   min-height: calc(100vh - var(--total-sticky-height));
   display: flex; align-items: center; justify-content: center;
-  background-image: url('images/homebannerdark.png');
+  background-image: url('images/grillin01.jpg');
   background-size: cover; background-position: center;
   position: relative; text-align: center; padding: 80px 20px 60px;
 }
@@ -398,7 +398,7 @@ header {
 /* =========================================================
    10. The Food Page
    ========================================================= */
-.food-hero-bg { background-image: url('images/missionbanner.png'); }
+.food-hero-bg { background-image: url('images/grillin03.jpg'); }
 
 .food-items { max-width: 1100px; margin: 0 auto; padding: 80px 20px; }
 .food-item {
@@ -437,7 +437,7 @@ header {
 /* =========================================================
    11. Menus / Gallery Page
    ========================================================= */
-.menus-hero-bg { background-image: url('images/gallery.png'); }
+.menus-hero-bg { background-image: url('images/grillin04.jpg'); }
 
 .menus-intro { max-width: 700px; margin: 0 auto; text-align: center; padding: 60px 20px 40px; }
 .menus-intro h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: 16px; }
@@ -485,7 +485,7 @@ header {
 /* =========================================================
    12. Stay in the Loop (Signup Page)
    ========================================================= */
-.loop-hero-bg { background-image: url('images/getinvolved.png'); }
+.loop-hero-bg { background-image: url('images/grillin05.jpg'); }
 
 .loop-section { background-color: var(--gg-dark); padding: 80px 20px; }
 .loop-section .section-wrapper { padding: 0; max-width: 700px; }
@@ -542,7 +542,7 @@ header {
 /* =========================================================
    13. Contact Page
    ========================================================= */
-.contact-hero-bg { background-image: url('images/contact.png'); }
+.contact-hero-bg { background-image: url('images/grillin05.jpg'); }
 
 .contact-section { background-color: var(--gg-dark); padding: 80px 20px; }
 .contact-section .section-wrapper { padding: 0; max-width: 800px; }
