@@ -2,153 +2,204 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>American Reformers League - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Grillin Greek — Natick, MA</title>
+  <meta name="description" content="The Grillin Greek. Natick, MA's legendary Greek restaurant. Born from Olymbos Pizza. Something's cooking again." />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body id="home-page">
 
-  <!-- =================================================================
-  == STICKY HEADER AREA: Contains Ticker, Main Header, and Navigation ==
-  ================================================================== -->
+  <!-- Sticky Header + Nav -->
   <div class="site-header-sticky-container">
-    
-    <!-- TOP SCROLLING TICKER BANNER -->
+    <!-- Ticker Banner -->
     <div class="top-banner">
       <div class="ticker-wrap">
-          <div class="ticker-content">
-              <a href="register.html"><span>REGISTER TO VOTE</span></a>
-              <a href="contact.html#contributeSection"><span>SUPPORT THE MISSION</span></a>
-              <a href="get-involved.html#volunteerSection"><span>JOIN THE MOVEMENT</span></a>
-              <a href="#"><span>UPCOMING EVENTS</span></a>
-              <!-- Repeat for seamless loop -->
-              <a href="register.html"><span>REGISTER TO VOTE</span></a>
-              <a href="contact.html#contributeSection"><span>SUPPORT THE MISSION</span></a>
-              <a href="get-involved.html#volunteerSection"><span>JOIN THE MOVEMENT</span></a>
-              <a href="#"><span>UPCOMING EVENTS</span></a>
-          </div>
+        <div class="ticker-content">
+          <span>Something's cooking again</span>
+          <span>The Grillin Greek — Natick, MA</span>
+          <span>Humtziki Sauce — The Original</span>
+          <span>Mom's Greek Dressing — Made from scratch</span>
+          <span>Grilled Greek Salads — Chicken or Lamb</span>
+          <span>Est. when the vibes were right</span>
+          <span>Something's cooking again</span>
+          <span>The Grillin Greek — Natick, MA</span>
+          <span>Humtziki Sauce — The Original</span>
+          <span>Mom's Greek Dressing — Made from scratch</span>
+          <span>Grilled Greek Salads — Chicken or Lamb</span>
+          <span>Est. when the vibes were right</span>
+        </div>
       </div>
     </div>
 
-    <!-- MAIN HEADER -->
+    <!-- Header -->
     <header>
       <div class="header-content">
         <div class="logo-group">
           <a href="index.html">
-            <img src="images/unitycoalitionlogo.png" alt="Unity Coalition Logo" class="logo" />
-            <span class="logo-text">American Reformers League</span>
+            <div class="logo-text">
+              The Grillin Greek
+              <span>Natick, Massachusetts</span>
+            </div>
           </a>
         </div>
         <div class="header-right">
-          <div class="header-socials">
-            <a href="#" aria-label="X/Twitter"><img src="images/xlogo.png" alt="X Logo" /></a>
-            <a href="#" aria-label="Facebook"><img src="images/facebooklogo.png" alt="Facebook Logo" /></a>
-          </div>
           <div class="header-buttons">
-            <a href="https://www.amazon.com" target="_blank" rel="noopener noreferrer" class="header-shop-btn">Shop</a>
-            <a href="contact.html#contributeSection" class="header-contribute-btn">Contribute</a>
+            <a href="get-involved.html" class="header-notify-btn">Stay in the Loop</a>
+            <a href="about.html" class="header-story-btn">Our Story</a>
           </div>
-        </div>
-        <div class="hamburger">
-          <div></div>
-          <div></div>
-          <div></div>
+          <button class="hamburger" aria-label="Open menu">
+            <div></div><div></div><div></div>
+          </button>
         </div>
       </div>
     </header>
 
-    <!-- MAIN NAVIGATION -->
+    <!-- Main Nav -->
     <nav class="main-nav">
       <div class="main-nav-links">
         <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="mission.html">Mission</a>
-        <a href="projects.html">Projects</a>
-        <a href="get-involved.html">Get Involved</a>
+        <a href="about.html">Our Story</a>
+        <a href="mission.html">The Food</a>
+        <a href="gallery.html">The Menus</a>
+        <a href="projects.html">Press</a>
+        <a href="get-involved.html">Stay in the Loop</a>
         <a href="contact.html">Contact</a>
       </div>
     </nav>
   </div>
 
-  <!-- HERO SECTION -->
-  <section class="hero-impact" id="top">
-    <div class="hero-impact-content">
-      <h1 class="hero-outline-text">Reuniting</h1>
-      <h2 class="hero-solid-text">America</h2>
-      <p class="hero-subheadline">It Matters That We're United</p>
-      <div class="hero-buttons-group">
-        <a href="get-involved.html#volunteerSection" class="hero-volunteer-btn">Volunteer</a>
-        <a href="contact.html#contributeSection" class="hero-contribute-btn">Contribute</a>
+  <!-- =========================================================
+       HERO
+       ========================================================= -->
+  <section class="hero-main">
+    <div class="hero-content">
+      <span class="hero-eyebrow">Natick, Massachusetts · Est. Whenever We Felt Like It</span>
+      <h1 class="hero-title">The Grillin<br>Greek</h1>
+      <p class="hero-location">Natick · MA · 01760</p>
+      <p class="hero-tagline">"Something's cooking again."</p>
+      <div class="hero-buttons">
+        <a href="get-involved.html" class="btn-primary">Stay in the Loop</a>
+        <a href="about.html" class="btn-ghost">Our Story</a>
       </div>
     </div>
   </section>
 
-  <!-- VIDEO 1 -->
-  <div class="angled-section top-angle">
-    <section class="video-full-bleed" id="framework-for-unity">
-      <div class="video-overlay-text"><h2>American Reformers League</h2></div>
-      <video class="home-video" src="arl.mp4" autoplay loop muted playsinline poster="images/homepage.png">Sorry, your browser doesn't support embedded videos.</video>
-    </section>
-  </div>
-  
-  <!-- JOIN MOVEMENT -->
-  <section class="join-movement-section" id="join-our-movement">
-    <div class="join-movement-banner"><h2>JOIN OUR MOVEMENT</h2></div>
-    <div class="join-movement-form-container">
-      <div class="modern-form-wrapper">
-        <form>
-          <div class="form-field-group">
-            <div class="form-field"><span>Email Address</span><input type="email" name="email" placeholder="Your Email" required /></div>
-            <div class="form-field"><span>Zip Code</span><input type="text" name="zip" placeholder="Zip Code" required /></div>
-          </div>
-          <button type="submit" class="join-button">JOIN</button>
-        </form>
+  <!-- =========================================================
+       YOU REMEMBER US
+       ========================================================= -->
+  <section class="remember-section fade-in-section">
+    <div class="section-wrapper">
+      <p class="section-label">Natick, MA</p>
+      <h2 class="section-title">You remember us.</h2>
+      <div class="divider"></div>
+      <blockquote>
+        "The tzatziki was different here. The salads hit different.
+        You could taste that someone's mother made this."
+      </blockquote>
+      <p class="section-body" style="text-align:center; margin-top: 20px;">
+        For the people of Natick, The Grillin Greek wasn't just a restaurant.
+        It was a Thursday night with family. A lazy Sunday. A reason to drive
+        across town without needing one. We went home for a while.
+        But the flavors never left.
+      </p>
+      <div style="margin-top: 36px; display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="about.html" class="btn btn-outline">Read Our Story</a>
+        <a href="mission.html" class="btn btn-gold">The Food</a>
       </div>
-      <div class="unite-together-banner"><p>LET’S UNITE AMERICA TOGETHER</p></div>
     </div>
   </section>
 
-  <!-- DYNAMIC CARDS (REBUILT) -->
-  <div class="angled-section bottom-angle">
-    <main class="home-content-wrapper">
-      <section class="dynamic-card-section blue-card" id="reform-movement">
-        <div class="card-text-content"><h2>Uniting America's Reform Movement</h2><p>The American Reformers League serves as the essential bridge connecting the constructive elements of both populist and globalist perspectives, creating a unified framework for a new American center.</p></div>
-      </section>
-      <section class="dynamic-card-section red-card" id="dignified-order">
-        <div class="card-text-content"><h2>Building a More Dignified Order</h2><p>Our mission is not merely to mitigate polarization, but to facilitate a historic realignment. We demonstrate that independents can coordinate effectively for the common good.</p></div>
-      </section>
-    </main>
-  </div>
-  
-  <!-- VIDEO 2 -->
-  <section class="video-full-bleed" id="the-solution">
-    <div class="video-overlay-text"><h2>The People Are The Solution</h2></div>
-    <video class="home-video" src="arlvideo1.mp4" autoplay loop muted playsinline poster="images/homepage.png">Sorry, your browser doesn't support embedded videos.</video>
-  </section>
-
-  <!-- DONATE CTA SECTION -->
-  <section class="donate-cta-section" id="donate">
-    <div class="donate-cta-overlay"></div>
-    <div class="donate-cta-content">
-      <p class="donate-cta-quote">"Your support fuels the movement to restore our nation's integrity."</p>
-      <a href="contact.html#contributeSection" class="donate-cta-link">Donate</a>
+  <!-- =========================================================
+       SIGNATURE ITEMS
+       ========================================================= -->
+  <section class="signatures-section fade-in-section">
+    <div class="section-wrapper">
+      <p class="section-label">What We Made</p>
+      <h2 class="section-title">The Signatures</h2>
+      <div class="divider"></div>
+      <p class="section-body">
+        Everything made from scratch. No shortcuts. No freezer bags.
+        This is what Natick kept coming back for.
+      </p>
+      <div class="signatures-grid">
+        <div class="sig-card">
+          <span class="sig-icon">🫙</span>
+          <h3>The Humtziki</h3>
+          <p>Our original invention — homemade hummus blended with our house tzatziki.
+             Creamy, garlicky, completely addictive. You won't find this anywhere else.</p>
+        </div>
+        <div class="sig-card">
+          <span class="sig-icon">🥗</span>
+          <h3>Mom's Greek Dressing</h3>
+          <p>A family recipe we never sold. Until maybe now. Herbaceous, bright,
+             and the reason our salads were unlike anything else in MetroWest.</p>
+        </div>
+        <div class="sig-card">
+          <span class="sig-icon">🥙</span>
+          <h3>Greek Tzatziki</h3>
+          <p>Thick. Cool. Made the right way — real Greek yogurt, fresh cucumber,
+             dill, a little garlic. The benchmark everything else gets measured against.</p>
+        </div>
+        <div class="sig-card">
+          <span class="sig-icon">🔥</span>
+          <h3>Grilled Greek Salads</h3>
+          <p>Fresh greens, house dressing, and your choice of grilled marinated chicken
+             or thinly sliced seasoned lamb. Simple. Perfect. Impossible to forget.</p>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:40px;">
+        <a href="mission.html" class="btn btn-outline">See All The Food</a>
+      </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- =========================================================
+       JOIN THE LIST
+       ========================================================= -->
+  <section class="list-section fade-in-section" id="notify">
+    <div class="section-wrapper">
+      <p class="section-label">Be First to Know</p>
+      <h2 class="section-title">Are we coming back?</h2>
+      <div class="divider" style="margin-left:auto;margin-right:auto;"></div>
+      <p class="section-body" style="margin:0 auto; text-align:center;">
+        We're not saying yes. We're not saying no. But if something is happening —
+        a pop-up, a product drop, a sauce that finally ships — you'll hear it here first.
+        Drop your email and zip code. We'll take it from there.
+      </p>
+      <form class="mini-form" id="notifyForm">
+        <input type="email" name="email" placeholder="Your email address" required />
+        <input type="text" name="zip" placeholder="Zip code" maxlength="10" />
+        <button type="submit">Notify Me</button>
+      </form>
+      <p style="text-align:center; font-size:0.82rem; color:var(--gg-stone); margin-top:14px;">
+        No spam. Ever. Just the good stuff when the time is right.
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
   <footer>
-    <div class="footer-grid">
-      <div class="footer-column-logo">
-         <img src="images/arllogo.png" alt="Unity Coalition Logo" class="logo" /><!-- Logo Image Removed as requested -->
-        <!-- Tagline converted to a heading -->
-        <h4 class="footer-tagline-heading">It Matters That We're United.</h4>
-      </div>
-      <div class="footer-column-links"><h4>Quick Links</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a href="mission.html">Our Mission</a><a href="projects.html">Projects</a></div>
-      <div class="footer-column-links"><h4>Get Involved</h4><a href="get-involved.html">Volunteer</a><a href="contact.html#contributeSection">Contribute</a><a href="gallery.html">Gallery</a><a href="resources.html">Resources</a></div>
-      <div class="footer-column-links"><h4>Connect</h4><a href="#">X / Twitter</a><a href="#">Facebook</a><a href="https://www.mightynetworks.com/">Mighty Networks</a><a href="contact.html">Contact Us</a></div>
+    <div class="footer-inner">
+      <div class="footer-logo">The Grillin Greek</div>
+      <p class="footer-tagline">"The legend doesn't retire. It just waits."</p>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">Our Story</a>
+        <a href="mission.html">The Food</a>
+        <a href="gallery.html">The Menus</a>
+        <a href="projects.html">Press</a>
+        <a href="get-involved.html">Stay in the Loop</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="footer-copyright">
+        © The Grillin Greek. Natick, MA 01760. All rights reserved.<br>
+        <span style="font-size:0.75rem;">
+          Site by <a href="https://fotiosmpouris.com" target="_blank" rel="noopener" style="color:var(--gg-gold);">Fotios Mpouris</a>
+        </span>
+      </p>
     </div>
-    <div class="footer-bottom"><p>© 2025 American Reformers League. All rights reserved.</p></div>
   </footer>
 
   <script src="script.js"></script>

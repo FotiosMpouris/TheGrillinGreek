@@ -1,235 +1,260 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+
+  /************************************************************
+   * 1. HAMBURGER MOBILE NAV OVERLAY
+   ************************************************************/
   const hamburger = document.querySelector(".hamburger");
   const mainNavLinks = document.querySelector(".main-nav-links");
 
-  /************************************************
-   * 1. Hamburger Overlay
-   ***********************************************/
   if (hamburger && mainNavLinks) {
-      let overlay = document.createElement("div");
-      overlay.classList.add("mobile-nav-overlay");
-      document.body.appendChild(overlay);
+    const overlay = document.createElement("div");
+    overlay.classList.add("mobile-nav-overlay");
 
-      let overlayNavHTML = `<button class="close-overlay-btn" aria-label="Close menu">×</button>${mainNavLinks.innerHTML}`;
-      overlay.innerHTML = overlayNavHTML;
+    overlay.innerHTML = `
+      <button class="close-overlay-btn" aria-label="Close menu">&times;</button>
+      ${mainNavLinks.innerHTML}
+    `;
+    document.body.appendChild(overlay);
 
-      const closeOverlayBtn = overlay.querySelector('.close-overlay-btn');
+    const closeBtn = overlay.querySelector(".close-overlay-btn");
 
-      const toggleOverlay = () => {
-        overlay.classList.toggle("show");
-        hamburger.classList.toggle("is-active");
-      };
+    const toggleOverlay = () => {
+      overlay.classList.toggle("show");
+      hamburger.classList.toggle("is-active");
+    };
 
-      hamburger.addEventListener("click", toggleOverlay);
-      closeOverlayBtn.addEventListener("click", toggleOverlay);
+    hamburger.addEventListener("click", toggleOverlay);
+    closeBtn.addEventListener("click", toggleOverlay);
 
-      overlay.querySelectorAll("a").forEach(link => {
-          link.addEventListener("click", () => {
-            if (overlay.classList.contains("show")) {
-              toggleOverlay();
-            }
-          });
+    overlay.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        if (overlay.classList.contains("show")) toggleOverlay();
       });
+    });
   }
 
-  /************************************************
-   * 2. Homepage-Only Functionality
-   ***********************************************/
-  if (document.body.id === 'home-page') {
-    function createPopup() {
-      let imagePopupOverlay = document.createElement("div");
-      imagePopupOverlay.id = "imagePopupOverlay";
-      imagePopupOverlay.innerHTML = `
-          <div class="image-popup-content"><button class="close-popup-btn" aria-label="Close popup">×</button><div class="popup-card"><div class="popup-image-container"></div><div class="popup-button-group"><a href="https://www.amazon.com" class="popup-shop-btn" target="_blank" rel="noopener noreferrer">Shop Now</a><a href="contact.html#contributeSection" class="popup-contribute-btn">Contribute</a></div></div></div>`;
-      document.body.appendChild(imagePopupOverlay);
-      const closeBtn = imagePopupOverlay.querySelector(".close-popup-btn");
-      closeBtn.addEventListener("click", () => imagePopupOverlay.classList.remove('show'));
-      imagePopupOverlay.addEventListener('click', (e) => { if (e.target === imagePopupOverlay) imagePopupOverlay.classList.remove('show'); });
-      setTimeout(() => imagePopupOverlay.classList.add("show"), 10000);
-    }
-    //createPopup(); // I've commented this out as it can be annoying during development. Uncomment when ready.
-
-    const homePageVideos = document.querySelectorAll("video.home-video");
-    if (homePageVideos.length > 0) {
-      homePageVideos.forEach(video => {
-          video.muted = true;
-          video.addEventListener("click", () => {
-              if (video.muted) {
-                  homePageVideos.forEach(otherVideo => { otherVideo.muted = true; });
-                  video.muted = false;
-                  video.play().catch(e => console.warn("Video play() failed:", e));
-              } else { video.muted = true; }
-          });
-      });
-    }
-
-    const homeBtcLogo = document.getElementById("homeBitcoinLogo");
-    if (homeBtcLogo) homeBtcLogo.addEventListener("click", () => alert("Bitcoin donation option coming soon!"));
-  }
-
-  /************************************************
-   * 3. Form Submission Handling (Unified)
-   ***********************************************/
-  const apiGatewayUrl = "https://po1s6ptb9g.execute-api.us-east-2.amazonaws.com/dev/submit";
-  
-  const joinFormHome = document.querySelector("#home-page .join-movement-section form");
-  const volunteerForm = document.getElementById("volunteerForm");
-  const subscribeForm = document.getElementById("subscribeForm");
-  const donateFormContact = document.getElementById("donateFormContact"); // ADDED
-
-  if (joinFormHome) joinFormHome.addEventListener("submit", (event) => handleFormSubmit(event, 'join'));
-  if (volunteerForm) volunteerForm.addEventListener("submit", (event) => handleFormSubmit(event, 'volunteer'));
-  if (subscribeForm) subscribeForm.addEventListener("submit", (event) => handleFormSubmit(event, 'subscribe'));
-  if (donateFormContact) donateFormContact.addEventListener("submit", (event) => handleFormSubmit(event, 'donate_pledge')); // ADDED
-
-  async function handleFormSubmit(event, formType) {
-    event.preventDefault();
-    const form = event.target;
-    const submitButton = form.querySelector('button[type="submit"]');
-    const originalButtonText = submitButton.textContent;
-    
-    submitButton.disabled = true;
-    submitButton.textContent = 'Submitting...';
-
-    const dataPayload = { formType };
-    const formData = new FormData(form);
-
-    try {
-      if (formType === 'join') {
-        dataPayload.email = formData.get('email');
-        dataPayload.zipCode = formData.get('zip');
-        if (!dataPayload.email) throw new Error("Email is required.");
-      } 
-      else if (formType === 'volunteer') {
-        dataPayload.firstName = formData.get('firstName');
-        dataPayload.lastName = formData.get('lastName');
-        dataPayload.email = formData.get('email');
-        dataPayload.phone = formData.get('phone');
-        dataPayload.city = formData.get('city');
-        dataPayload.state = formData.get('state');
-        dataPayload.zipCode = formData.get('zip');
-        dataPayload.interests = formData.getAll('interest');
-        dataPayload.notRobotChecked = formData.get('not_robot') === 'on';
-        dataPayload.privacyPolicyAgreed = formData.get('privacy_policy') === 'on';
-        if (!dataPayload.firstName || !dataPayload.lastName || !dataPayload.email) throw new Error("First Name, Last Name, and Email are required.");
-        if (!dataPayload.notRobotChecked) throw new Error("Please confirm you are not a robot.");
-        if (!dataPayload.privacyPolicyAgreed) throw new Error("You must agree to the Privacy Policy.");
-      }
-      else if (formType === 'subscribe') {
-        dataPayload.name = formData.get('name');
-        dataPayload.email = formData.get('email');
-        dataPayload.privacyPolicyAgreed = formData.get('privacy_policy') === 'on';
-        if (!dataPayload.name || !dataPayload.email) throw new Error("Name and Email are required.");
-        if (!dataPayload.privacyPolicyAgreed) throw new Error("You must agree to the Privacy Policy.");
-      }
-      // ADDED: Logic for the new donation pledge form
-      else if (formType === 'donate_pledge') {
-        dataPayload.donationAmount = formData.get('donationAmount');
-        dataPayload.name = formData.get('name');
-        dataPayload.email = formData.get('email');
-        dataPayload.isRecurring = formData.get('is_recurring') === 'on';
-        if (!dataPayload.donationAmount || !dataPayload.name || !dataPayload.email) throw new Error("Amount, Name, and Email are required.");
-      }
-
-    } catch (validationError) {
-        alert(`Error: ${validationError.message}`);
-        submitButton.disabled = false;
-        submitButton.textContent = originalButtonText;
-        return;
-    }
-    
-    try {
-        const response = await fetch(apiGatewayUrl, {
-            method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(dataPayload),
-        });
-        if (response.ok) {
-            alert("Thank you! Your submission was successful.");
-            form.reset();
-            // ADDED: Specifically for the donation form, reset the active button state after submit
-            if (formType === 'donate_pledge') {
-              const amountButtons = form.querySelectorAll('.amount-btn');
-              amountButtons.forEach(btn => btn.classList.remove('active'));
-              const defaultButton = form.querySelector('.amount-btn[data-amount="50"]');
-              if(defaultButton) defaultButton.classList.add('active');
-            }
-        } else {
-            const responseData = await response.json().catch(() => ({}));
-            const errorMessage = responseData.message || `Server responded with status ${response.status}.`;
-            alert(`Submission Failed: ${errorMessage}`);
-        }
-    } catch (error) {
-        console.error("Submission Error:", error);
-        alert("An error occurred while sending your submission. Please check your connection.");
-    } finally {
-        submitButton.disabled = false;
-        submitButton.textContent = originalButtonText;
-    }
-  }
-
-  /******************************************************************
-   * 4. Site-Wide Smooth Scroll for Anchor Links
-   ******************************************************************/
-  function smoothScrollToAnchor(hash) {
-      const targetElement = document.querySelector(hash);
-      if (targetElement) {
-          targetElement.scrollIntoView({ behavior: 'smooth' });
-      }
-  }
-
+  /************************************************************
+   * 2. SMOOTH SCROLL FOR ANCHOR LINKS
+   ************************************************************/
   document.querySelectorAll('a[href*="#"]').forEach(link => {
-      link.addEventListener('click', function (e) {
-          const href = this.getAttribute('href');
-          const targetPath = href.split('#')[0];
-          const currentPath = window.location.pathname.endsWith('/') 
-              ? window.location.pathname 
-              : window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
+    link.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
+      const targetPath = href.split("#")[0];
+      const currentFile = window.location.pathname
+        .substring(window.location.pathname.lastIndexOf("/") + 1);
 
-          if ((targetPath === '' || targetPath === currentPath) && href.includes('#')) {
-              e.preventDefault();
-              const targetHash = `#${href.split('#')[1]}`;
-              history.pushState(null, null, targetHash);
-              smoothScrollToAnchor(targetHash);
-          }
-      });
+      if ((targetPath === "" || targetPath === currentFile) && href.includes("#")) {
+        const hash = `#${href.split("#")[1]}`;
+        const target = document.querySelector(hash);
+        if (target) {
+          e.preventDefault();
+          history.pushState(null, null, hash);
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    });
   });
 
   if (window.location.hash) {
     setTimeout(() => {
-        smoothScrollToAnchor(window.location.hash);
-    }, 100);
+      const el = document.querySelector(window.location.hash);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }, 120);
   }
-  
-  /******************************************************************
-   * 5. Donation Form Amount Picker Logic
-   ******************************************************************/
-  const donationFormOnContactPage = document.getElementById('donateFormContact');
-  if (donationFormOnContactPage) {
-    const amountButtons = donationFormOnContactPage.querySelectorAll('.amount-btn');
-    const customAmountInput = donationFormOnContactPage.querySelector('#customAmount');
-    const hiddenAmountInput = donationFormOnContactPage.querySelector('#donationAmountInput');
 
-    amountButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            amountButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            hiddenAmountInput.value = button.dataset.amount;
-            customAmountInput.value = '';
-        });
-    });
-
-    customAmountInput.addEventListener('input', () => {
-        if(customAmountInput.value) {
-            amountButtons.forEach(btn => btn.classList.remove('active'));
-            hiddenAmountInput.value = customAmountInput.value;
+  /************************************************************
+   * 3. FADE-IN ON SCROLL (Intersection Observer)
+   ************************************************************/
+  const fadeEls = document.querySelectorAll(".fade-in-section");
+  if (fadeEls.length > 0) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
         }
+      });
+    }, { threshold: 0.1 });
+
+    fadeEls.forEach(el => observer.observe(el));
+  }
+
+  /************************************************************
+   * 4. FORM SUBMISSIONS — AWS API GATEWAY
+   ************************************************************/
+  const API_URL = "https://po1s6ptb9g.execute-api.us-east-2.amazonaws.com/dev/submit";
+
+  // ---- Mini homepage notify form ----
+  const notifyForm = document.getElementById("notifyForm");
+  if (notifyForm) {
+    notifyForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const btn = notifyForm.querySelector("button[type='submit']");
+      const original = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = "Sending...";
+
+      const fd = new FormData(notifyForm);
+      const email = fd.get("email");
+      const zip   = fd.get("zip");
+
+      if (!email) {
+        alert("Please enter your email address.");
+        btn.disabled = false;
+        btn.textContent = original;
+        return;
+      }
+
+      try {
+        const res = await fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ formType: "join", email, zipCode: zip }),
+        });
+        if (res.ok) {
+          alert("You're on the list. We'll be in touch when the time is right.");
+          notifyForm.reset();
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      } catch {
+        alert("Connection error. Please try again later.");
+      } finally {
+        btn.disabled = false;
+        btn.textContent = original;
+      }
     });
   }
 
-  /******************************************************************
-   * 6. Miscellaneous Event Handlers
-   ******************************************************************/
-  const bitcoinDonateButton = document.getElementById("bitcoinDonate");
-  if(bitcoinDonateButton) bitcoinDonateButton.addEventListener("click", () => alert("Bitcoin donation option coming soon!"));
+  // ---- Stay in the Loop interest form ----
+  const interestForm = document.getElementById("interestForm");
+  if (interestForm) {
+    interestForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const btn = interestForm.querySelector("button[type='submit']");
+      const original = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = "Sending...";
 
-  console.log("ARL Script Initialized (V9)");
+      const fd = new FormData(interestForm);
+      const firstName = fd.get("firstName");
+      const lastName  = fd.get("lastName");
+      const email     = fd.get("email");
+      const city      = fd.get("city") || "";
+      const interests = fd.getAll("interest");
+      const message   = fd.get("message") || "";
+      const agreed    = fd.get("privacy_policy") === "on";
+
+      if (!firstName || !lastName || !email) {
+        alert("Please fill in your name and email address.");
+        btn.disabled = false;
+        btn.textContent = original;
+        return;
+      }
+      if (!agreed) {
+        alert("Please agree to receive updates before submitting.");
+        btn.disabled = false;
+        btn.textContent = original;
+        return;
+      }
+
+      try {
+        const res = await fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            formType: "volunteer",
+            firstName, lastName, email,
+            city, state: "MA",
+            interests,
+            notRobotChecked: true,
+            privacyPolicyAgreed: true,
+            message,
+          }),
+        });
+        if (res.ok) {
+          alert("You're in. We'll reach out when something is happening. Thank you!");
+          interestForm.reset();
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      } catch {
+        alert("Connection error. Please try again later.");
+      } finally {
+        btn.disabled = false;
+        btn.textContent = original;
+      }
+    });
+  }
+
+  // ---- Contact form ----
+  const contactForm = document.getElementById("contactForm");
+  if (contactForm) {
+    contactForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const btn = contactForm.querySelector("button[type='submit']");
+      const original = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = "Sending...";
+
+      const fd      = new FormData(contactForm);
+      const name    = fd.get("name");
+      const email   = fd.get("email");
+      const subject = fd.get("subject") || "";
+      const message = fd.get("message");
+      const agreed  = fd.get("privacy_policy") === "on";
+
+      if (!name || !email || !message) {
+        alert("Please fill in your name, email, and message.");
+        btn.disabled = false;
+        btn.textContent = original;
+        return;
+      }
+      if (!agreed) {
+        alert("Please check the agreement box before sending.");
+        btn.disabled = false;
+        btn.textContent = original;
+        return;
+      }
+
+      try {
+        const res = await fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            formType: "subscribe",
+            name, email,
+            privacyPolicyAgreed: true,
+            subject, message,
+          }),
+        });
+        if (res.ok) {
+          alert("Message received! We'll get back to you soon.");
+          contactForm.reset();
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      } catch {
+        alert("Connection error. Please try again later.");
+      } finally {
+        btn.disabled = false;
+        btn.textContent = original;
+      }
+    });
+  }
+
+  /************************************************************
+   * 5. ACTIVE NAV LINK HIGHLIGHTING
+   ************************************************************/
+  const currentPage = window.location.pathname
+    .substring(window.location.pathname.lastIndexOf("/") + 1) || "index.html";
+
+  document.querySelectorAll(".main-nav a").forEach(link => {
+    const linkPage = link.getAttribute("href");
+    if (linkPage === currentPage || (currentPage === "" && linkPage === "index.html")) {
+      link.classList.add("active");
+    }
+  });
+
+  console.log("The Grillin Greek — Script Initialized");
 });

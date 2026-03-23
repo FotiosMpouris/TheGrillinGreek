@@ -2,101 +2,252 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>American Reformers League - Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Menus — The Grillin Greek</title>
+  <meta name="description" content="The original menus from The Grillin Greek and Olymbos Pizza. A visual archive of a Natick institution." />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body id="gallery-page">
+<body>
 
-  <!-- ================== STANDARD HEADER ================== -->
+  <!-- Sticky Header + Nav -->
   <div class="site-header-sticky-container">
     <div class="top-banner">
       <div class="ticker-wrap">
-          <div class="ticker-content">
-              <a href="register.html"><span>REGISTER TO VOTE</span></a>
-              <a href="contact.html#contributeSection"><span>SUPPORT THE MISSION</span></a>
-              <a href="get-involved.html#volunteerSection"><span>JOIN THE MOVEMENT</span></a>
-              <a href="#"><span>UPCOMING EVENTS</span></a>
-              <a href="register.html"><span>REGISTER TO VOTE</span></a>
-              <a href="contact.html#contributeSection"><span>SUPPORT THE MISSION</span></a>
-              <a href="get-involved.html#volunteerSection"><span>JOIN THE MOVEMENT</span></a>
-              <a href="#"><span>UPCOMING EVENTS</span></a>
-          </div>
+        <div class="ticker-content">
+          <span>The original menus — Natick history</span>
+          <span>Olymbos Pizza · The Grillin Greek</span>
+          <span>More archive photos coming soon</span>
+          <span>The original menus — Natick history</span>
+          <span>Olymbos Pizza · The Grillin Greek</span>
+          <span>More archive photos coming soon</span>
+        </div>
       </div>
     </div>
+
     <header>
-      <div class="header-content"><div class="logo-group"><a href="index.html"><img src="images/unitycoalitionlogo.png" alt="Unity Coalition Logo" class="logo" /><span class="logo-text">American Reformers League</span></a></div><div class="header-right"><div class="header-socials"><a href="#" aria-label="X/Twitter"><img src="images/xlogo.png" alt="X Logo" /></a><a href="#" aria-label="Facebook"><img src="images/facebooklogo.png" alt="Facebook Logo" /></a></div><div class="header-buttons"><a href="https://www.amazon.com" target="_blank" rel="noopener noreferrer" class="header-shop-btn">Shop</a><a href="contact.html#contributeSection" class="header-contribute-btn">Contribute</a></div></div><div class="hamburger"><div></div><div></div><div></div></div></div>
+      <div class="header-content">
+        <div class="logo-group">
+          <a href="index.html">
+            <div class="logo-text">
+              The Grillin Greek
+              <span>Natick, Massachusetts</span>
+            </div>
+          </a>
+        </div>
+        <div class="header-right">
+          <div class="header-buttons">
+            <a href="get-involved.html" class="header-notify-btn">Stay in the Loop</a>
+            <a href="mission.html" class="header-story-btn">The Food</a>
+          </div>
+          <button class="hamburger" aria-label="Open menu">
+            <div></div><div></div><div></div>
+          </button>
+        </div>
+      </div>
     </header>
+
     <nav class="main-nav">
-      <div class="main-nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="mission.html">Mission</a><a href="projects.html">Projects</a><a href="get-involved.html">Get Involved</a><a href="contact.html">Contact</a></div>
+      <div class="main-nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">Our Story</a>
+        <a href="mission.html">The Food</a>
+        <a href="gallery.html" class="active">The Menus</a>
+        <a href="projects.html">Press</a>
+        <a href="get-involved.html">Stay in the Loop</a>
+        <a href="contact.html">Contact</a>
+      </div>
     </nav>
   </div>
 
-  <!-- PAGE HERO -->
-  <section class="page-hero" style="background-image: url('images/gallery.png');">
-    <div class="page-hero-overlay"><h1>Gallery</h1></div>
+  <!-- Page Hero -->
+  <section class="page-hero menus-hero-bg">
+    <div class="page-hero-content">
+      <p class="page-hero-sub">Archive · History · Natick, MA</p>
+      <h1>The Menus</h1>
+    </div>
   </section>
 
-  <main class="content-wrapper">
-    <!-- GALLERY INTRO -->
-    <section class="text-section">
-      <h2>Moments in the Movement</h2>
-      <p>Explore snapshots from our events, meetups, and community projects. These images represent our commitment to bringing together diverse voices in the pursuit of a more cohesive, effective reform movement.</p>
-    </section>
-
-    <!-- FILTER BUTTONS -->
-    <section class="gallery-filters">
-      <a href="#community-events" class="filter-btn">Community Events</a>
-      <a href="#summit-gatherings" class="filter-btn">Summit Gatherings</a>
-      <a href="#reform-dialogues" class="filter-btn">Reform Dialogues</a>
-      <a href="#coalition-building" class="filter-btn">Coalition Building</a>
-    </section>
-
-    <!-- COMMUNITY EVENTS -->
-    <section id="community-events" class="gallery-category">
-      <h2 class="section-title">Community Events</h2>
-      <div class="gallery-grid">
-        <div class="gallery-item"><img src="images/gallery1.png" alt="Community Event 1" /></div>
-        <div class="gallery-item"><img src="images/gallery2.png" alt="Community Event 2" /></div>
-      </div>
-    </section>
-
-    <!-- SUMMIT GATHERINGS -->
-    <section id="summit-gatherings" class="gallery-category">
-      <h2 class="section-title">Summit Gatherings</h2>
-      <div class="gallery-grid">
-        <div class="gallery-item"><img src="images/gallery3.png" alt="Summit Gathering 1" /></div>
-        <div class="gallery-item"><img src="images/gallery4.png" alt="Summit Gathering 2" /></div>
-      </div>
-    </section>
-
-    <!-- REFORM DIALOGUES -->
-    <section id="reform-dialogues" class="gallery-category">
-      <h2 class="section-title">Reform Dialogues</h2>
-      <div class="gallery-grid">
-        <div class="gallery-item placeholder"><p>Coming Soon</p></div>
-        <div class="gallery-item placeholder"><p>Coming Soon</p></div>
-      </div>
-    </section>
-
-    <!-- SUBMIT PHOTOS -->
-    <section class="text-section">
-      <h2>Share Your Moments</h2>
-      <p>Have you participated in an ARL event? We invite you to share your photos! To submit, please email them to <strong>gallery@example.com</strong> with a brief description.</p>
-    </section>
-
-  </main>
-  
-  <!-- ================== STANDARD FOOTER ================== -->
-  <footer>
-    <div class="footer-grid">
-      <div class="footer-column-logo"><h4 class="footer-tagline-heading">It Matters That We're United.</h4></div>
-      <div class="footer-column-links"><h4>Quick Links</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a href="mission.html">Our Mission</a><a href="projects.html">Projects</a></div>
-      <div class="footer-column-links"><h4>Get Involved</h4><a href="get-involved.html">Volunteer</a><a href="contact.html#contributeSection">Contribute</a><a href="gallery.html">Gallery</a><a href="resources.html">Resources</a></div>
-      <div class="footer-column-links"><h4>Connect</h4><a href="#">X / Twitter</a><a href="#">Facebook</a><a href="https://www.mightynetworks.com/">Mighty Networks</a><a href="contact.html">Contact Us</a></div>
+  <!-- =========================================================
+       MENUS INTRO
+       ========================================================= -->
+  <section class="section-dark fade-in-section">
+    <div class="menus-intro">
+      <p class="section-label">The Archive</p>
+      <h2>You don't throw away a menu like this.</h2>
+      <div class="divider" style="margin: 16px auto 28px;"></div>
+      <p>
+        The original menus from The Grillin Greek and Olymbos Pizza are
+        collector's items to anyone who was a regular. We're building this
+        gallery out — original print menus, photos from the restaurant,
+        articles, and anything else from the archive we can surface.
+        More images are being added as we find them.
+      </p>
     </div>
-    <div class="footer-bottom"><p>© 2025 American Reformers League. All rights reserved.</p></div>
+  </section>
+
+  <!-- =========================================================
+       MENU GALLERY
+       ========================================================= -->
+  <section class="section-dark fade-in-section" style="padding-bottom: 20px;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+      <p class="section-label">The Grillin Greek</p>
+      <h2 class="section-title">Original Menus</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="menu-gallery-grid">
+      <!-- Placeholder slots — user will add menu image files here -->
+      <div class="menu-gallery-item">
+        <div class="menu-gallery-placeholder">
+          <span class="ph-icon">📋</span>
+          <p><strong>Menu Page 1</strong><br>Add image: <code>images/menu-01.jpg</code></p>
+        </div>
+      </div>
+      <div class="menu-gallery-item">
+        <div class="menu-gallery-placeholder">
+          <span class="ph-icon">📋</span>
+          <p><strong>Menu Page 2</strong><br>Add image: <code>images/menu-02.jpg</code></p>
+        </div>
+      </div>
+      <div class="menu-gallery-item">
+        <div class="menu-gallery-placeholder">
+          <span class="ph-icon">📋</span>
+          <p><strong>Menu Page 3</strong><br>Add image: <code>images/menu-03.jpg</code></p>
+        </div>
+      </div>
+      <div class="menu-gallery-item">
+        <div class="menu-gallery-placeholder">
+          <span class="ph-icon">📋</span>
+          <p><strong>Menu Page 4</strong><br>Add image: <code>images/menu-04.jpg</code></p>
+        </div>
+      </div>
+      <div class="menu-gallery-item">
+        <div class="menu-gallery-placeholder">
+          <span class="ph-icon">📋</span>
+          <p><strong>Menu Page 5</strong><br>Add image: <code>images/menu-05.jpg</code></p>
+        </div>
+      </div>
+      <div class="menu-gallery-item">
+        <div class="menu-gallery-placeholder">
+          <span class="ph-icon">📋</span>
+          <p><strong>Menu Page 6</strong><br>Add image: <code>images/menu-06.jpg</code></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       OLYMBOS PIZZA MENUS
+       ========================================================= -->
+  <section class="section-medium fade-in-section" style="padding: 60px 20px;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <p class="section-label">Olymbos Pizza</p>
+      <h2 class="section-title">Where It All Started</h2>
+      <div class="divider"></div>
+      <p class="section-body" style="margin-bottom: 30px;">
+        Before the Grillin Greek had its own name, these were the menus
+        that first introduced Natick to the Greek kitchen. The originals.
+      </p>
+    </div>
+    <div class="menu-gallery-grid" style="max-width: 1200px; margin: 0 auto;">
+      <div class="menu-gallery-item">
+        <div class="menu-gallery-placeholder">
+          <span class="ph-icon">🍕</span>
+          <p><strong>Olymbos Menu 1</strong><br>Add image: <code>images/olymbos-menu-01.jpg</code></p>
+        </div>
+      </div>
+      <div class="menu-gallery-item">
+        <div class="menu-gallery-placeholder">
+          <span class="ph-icon">🍕</span>
+          <p><strong>Olymbos Menu 2</strong><br>Add image: <code>images/olymbos-menu-02.jpg</code></p>
+        </div>
+      </div>
+      <div class="menu-gallery-item">
+        <div class="menu-gallery-placeholder">
+          <span class="ph-icon">🍕</span>
+          <p><strong>Olymbos Menu 3</strong><br>Add image: <code>images/olymbos-menu-03.jpg</code></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       RESTAURANT PHOTOS
+       ========================================================= -->
+  <section class="section-dark fade-in-section" style="padding: 60px 20px 80px;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <p class="section-label">The Space</p>
+      <h2 class="section-title">Restaurant Photos</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="menu-gallery-grid" style="max-width: 1200px; margin: 0 auto;">
+      <div class="menu-gallery-item">
+        <div class="menu-gallery-placeholder">
+          <span class="ph-icon">📸</span>
+          <p><strong>Restaurant Photo 1</strong><br>Add image: <code>images/restaurant-01.jpg</code></p>
+        </div>
+      </div>
+      <div class="menu-gallery-item">
+        <div class="menu-gallery-placeholder">
+          <span class="ph-icon">📸</span>
+          <p><strong>Restaurant Photo 2</strong><br>Add image: <code>images/restaurant-02.jpg</code></p>
+        </div>
+      </div>
+      <div class="menu-gallery-item">
+        <div class="menu-gallery-placeholder">
+          <span class="ph-icon">📸</span>
+          <p><strong>Restaurant Photo 3</strong><br>Add image: <code>images/restaurant-03.jpg</code></p>
+        </div>
+      </div>
+      <div class="menu-gallery-item">
+        <div class="menu-gallery-placeholder">
+          <span class="ph-icon">📸</span>
+          <p><strong>Restaurant Photo 4</strong><br>Add image: <code>images/restaurant-04.jpg</code></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SUBMIT YOUR MEMORIES CTA
+       ========================================================= -->
+  <section class="section-medium fade-in-section">
+    <div class="section-wrapper text-center">
+      <p class="section-label">Help Us Fill the Archive</p>
+      <h2 class="section-title">Do you have photos?</h2>
+      <div class="divider" style="margin: 16px auto 28px;"></div>
+      <p class="section-body" style="margin: 0 auto 36px;">
+        If you were a regular and you have photos from the restaurant — interior,
+        food, events, anything — we'd love to see them and potentially add them to
+        this archive. Reach out and let's preserve this piece of Natick history.
+      </p>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-gold">Send Us Your Photos</a>
+        <a href="projects.html" class="btn btn-outline">Read the Press</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">The Grillin Greek</div>
+      <p class="footer-tagline">"The legend doesn't retire. It just waits."</p>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">Our Story</a>
+        <a href="mission.html">The Food</a>
+        <a href="gallery.html">The Menus</a>
+        <a href="projects.html">Press</a>
+        <a href="get-involved.html">Stay in the Loop</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="footer-copyright">
+        © The Grillin Greek. Natick, MA 01760. All rights reserved.<br>
+        <span style="font-size:0.75rem;">
+          Site by <a href="https://fotiosmpouris.com" target="_blank" rel="noopener" style="color:var(--gg-gold);">Fotios Mpouris</a>
+        </span>
+      </p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
