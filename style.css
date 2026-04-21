@@ -873,3 +873,84 @@ footer {
   .menu-course .course-header h2 { font-size: 1.45rem; }
   .menu-photo-break { height: 200px; }
 }
+
+
+/* =========================================================
+   THE FOOD — visual gallery
+   ========================================================= */
+.food-gallery {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px 70px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.food-gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(135deg, #1a1208 0%, #0f0905 100%);
+  border: 1px solid rgba(196,136,10,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.food-gallery-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+.food-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  top: 0; left: 0;
+}
+.food-gallery-item .gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 16px 14px;
+  background: linear-gradient(0deg, rgba(14,11,7,0.88) 0%, rgba(14,11,7,0) 100%);
+  color: var(--gg-cream);
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  z-index: 2;
+}
+.food-gallery-item .gallery-ph {
+  color: var(--gg-stone);
+  font-size: 0.72rem;
+  font-style: italic;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.5;
+  z-index: 2;
+}
+/* Feature item spans 2 columns */
+.food-gallery-item.wide {
+  grid-column: span 2;
+  aspect-ratio: 2 / 1;
+}
+/* Feature item spans full row */
+.food-gallery-item.full {
+  grid-column: 1 / -1;
+  aspect-ratio: 3 / 1;
+}
+@media (max-width: 768px) {
+  .food-gallery { grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 30px 16px 50px; }
+  .food-gallery-item.wide { grid-column: span 2; }
+  .food-gallery-item.full { grid-column: 1 / -1; aspect-ratio: 2 / 1; }
+}
+@media (max-width: 480px) {
+  .food-gallery { grid-template-columns: 1fr; }
+  .food-gallery-item.wide { grid-column: span 1; aspect-ratio: 1 / 1; }
+  .food-gallery-item.full { aspect-ratio: 16 / 9; }
+}
