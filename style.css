@@ -968,3 +968,27 @@ footer {
   #home-page .hero-eyebrow { letter-spacing: 2px; font-size: 0.68rem; padding: 6px 10px; }
   .page-hero { min-height: 300px; }
 }
+
+/* =========================================================
+   Mobile heroes + tap targets (2026-10-13)
+   Phones: show the whole collage (no side crop) as a photo band,
+   light overlay so the food reads, title sits on solid dark below.
+   ========================================================= */
+@media (max-width: 640px) {
+  .page-hero, #home-page .hero-main {
+    background-size: 100% auto; background-position: top center; background-repeat: no-repeat;
+    background-color: var(--gg-dark);
+    min-height: 0; align-items: flex-start;
+  }
+  .page-hero { --photo-h: calc(100vw / 3); padding: calc(var(--photo-h) + 22px) 20px 34px; }
+  #home-page .hero-main { --photo-h: calc(100vw * 0.5625); padding: calc(var(--photo-h) + 26px) 20px 48px; }
+  .page-hero::before, #home-page .hero-main::before {
+    background: linear-gradient(180deg,
+      rgba(14,11,7,0.10) 0,
+      rgba(14,11,7,0.18) calc(var(--photo-h) - 36px),
+      var(--gg-dark) var(--photo-h),
+      var(--gg-dark) 100%);
+  }
+  .footer-nav a { display: inline-block; padding: 12px 8px; }
+  input[type="checkbox"], input[type="radio"] { width: 22px; height: 22px; }
+}
