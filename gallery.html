@@ -2,14 +2,168 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>The Grillin Greek</title>
-  <meta http-equiv="refresh" content="0; url=the-table.html" />
-  <script>window.location.replace('the-table.html');</script>
-  <style>body{background:#0E0B07;color:#E8A815;font-family:'Open Sans',sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;text-align:center}a{color:#E8A815}</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — The Grillin Greek</title>
+  <meta name="description" content="Real photos from The Grillin Greek kitchen: salads, sides, filo, the grill and the bakery." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div>
-    <p>Redirecting to <a href="the-table.html">The Table</a>...</p>
+
+  <!-- Sticky Header + Nav -->
+  <div class="site-header-sticky-container">
+    <div class="top-banner">
+      <div class="ticker-wrap">
+        <div class="ticker-content">
+          <span>Grilled over real fire</span>
+          <span>Gourmet pizza, made by hand</span>
+          <span>Salads piled high and built fresh</span>
+          <span>Mom's Greek Dressing &middot; Still from scratch</span>
+          <span>King Cupcake muffins &middot; Carrot, apple, zucchini, pumpkin</span>
+          <span>Bread and breadsticks, baked here</span>
+          <span>Community driven &middot; Natick, MA</span>
+          <span>Want one in your community?</span>
+          <span>Something's cooking &middot; Be the first to know</span>
+          <span>Grilled over real fire</span>
+          <span>Gourmet pizza, made by hand</span>
+          <span>Salads piled high and built fresh</span>
+          <span>Mom's Greek Dressing &middot; Still from scratch</span>
+          <span>King Cupcake muffins &middot; Carrot, apple, zucchini, pumpkin</span>
+          <span>Bread and breadsticks, baked here</span>
+          <span>Community driven &middot; Natick, MA</span>
+          <span>Want one in your community?</span>
+          <span>Something's cooking &middot; Be the first to know</span>
+        </div>
+      </div>
+    </div>
+
+    <header>
+      <div class="header-content">
+        <div class="logo-group">
+          <a href="index.html">
+            <div class="logo-text">
+              The Grillin Greek
+            </div>
+          </a>
+        </div>
+        <nav class="main-nav" aria-label="Main">
+          <div class="main-nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html" >Our Story</a>
+            <a href="mission.html">The Food</a>
+            <a href="projects.html">Press</a>
+            <a href="the-table.html">The Table</a>
+            <a href="get-involved.html">What's Cooking</a>
+            <a href="gallery.html" class="active">Gallery</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </nav>
+        <div class="header-right">
+          <button class="hamburger" aria-label="Open menu">
+            <div></div><div></div><div></div>
+          </button>
+        </div>
+      </div>
+    </header>
   </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero gallery-hero-bg">
+    <div class="page-hero-content">
+      <p class="page-hero-sub">Straight from the Kitchen</p>
+      <h1>Gallery</h1>
+    </div>
+  </section>
+
+  <section class="section-medium" style="padding: 10px 0 0;">
+    <div class="section-wrapper text-center" style="padding-bottom: 10px;">
+      <p class="section-label">Real Food &middot; Real Kitchen &middot; No Filters Needed</p>
+      <h2 class="section-title">A few cool shots.</h2>
+      <div class="divider" style="margin: 16px auto 0;"></div>
+    </div>
+
+    <div class="food-gallery">
+      <div class="food-gallery-item wide">
+        <img src="images/gallery-greek-salad.jpg" alt="Greek salad with crumbled feta, chopped greens and red pepper in a black bowl" loading="lazy" />
+        <span class="gallery-caption">The Greek Salad</span>
+      </div>
+      <div class="food-gallery-item">
+        <img src="images/gallery-spiral-pie.jpg" alt="A golden coiled filo pie on a wooden counter" loading="lazy" />
+        <span class="gallery-caption">Coiled Filo Pie</span>
+      </div>
+      <div class="food-gallery-item">
+        <img src="images/gallery-lobster.jpg" alt="A bowl of fresh-picked lobster meat" loading="lazy" />
+        <span class="gallery-caption">Lobster, Picked Fresh</span>
+      </div>
+      <div class="food-gallery-item">
+        <img src="images/gallery-corn-salad.jpg" alt="Corn salad with sweet corn and grilled chicken pieces" loading="lazy" />
+        <span class="gallery-caption">Corn Salad</span>
+      </div>
+      <div class="food-gallery-item">
+        <img src="images/gallery-roast-eggplant.jpg" alt="Eggplant rounds roasting with mushrooms and herbs" loading="lazy" />
+        <span class="gallery-caption">Roasted Eggplant</span>
+      </div>
+      <div class="food-gallery-item wide">
+        <img src="images/gallery-roast-beef-salad.jpg" alt="Roast beef salad over crisp lettuce with tomato and feta" loading="lazy" />
+        <span class="gallery-caption">Roast Beef Salad</span>
+      </div>
+      <div class="food-gallery-item">
+        <img src="images/gallery-pastry-rolls.jpg" alt="Hand-rolled golden pastry baked side by side" loading="lazy" />
+        <span class="gallery-caption">From the Oven</span>
+      </div>
+      <div class="food-gallery-item">
+        <img src="images/gallery-cucumber-pepper-salad.jpg" alt="Diced cucumber and orange pepper salad in a white bowl" loading="lazy" />
+        <span class="gallery-caption">Cucumber &amp; Pepper</span>
+      </div>
+      <div class="food-gallery-item">
+        <img src="images/gallery-arugula.jpg" alt="A heap of fresh arugula leaves" loading="lazy" />
+        <span class="gallery-caption">Fresh Arugula</span>
+      </div>
+      <div class="food-gallery-item">
+        <img src="images/gallery-sweet-corn.jpg" alt="Sweet corn kernels, cut from the cob" loading="lazy" />
+        <span class="gallery-caption">Sweet Corn</span>
+      </div>
+      <div class="food-gallery-item">
+        <img src="images/gallery-rice-scallion.jpg" alt="Rice tossed with scallions and corn" loading="lazy" />
+        <span class="gallery-caption">Rice with Scallions</span>
+      </div>
+      <div class="food-gallery-item">
+        <img src="images/gallery-sauteed-greens.jpg" alt="Sautéed greens on a white plate" loading="lazy" />
+        <span class="gallery-caption">Sautéed Greens</span>
+      </div>
+      <div class="food-gallery-item">
+        <img src="images/gallery-crispy-sticks.jpg" alt="Golden crispy vegetable sticks on parchment" loading="lazy" />
+        <span class="gallery-caption">Crispy &amp; Golden</span>
+      </div>
+      <div class="food-gallery-item full">
+        <img src="images/gallery-cookies.jpg" alt="Chocolate chip cookies cooling on parchment" loading="lazy" />
+        <span class="gallery-caption">Chocolate Chip Cookies</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">The Grillin Greek</div>
+      <p class="footer-tagline">"The legend doesn't retire. It just waits."</p>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">Our Story</a>
+        <a href="mission.html">The Food</a>
+        <a href="projects.html">Press</a>
+        <a href="the-table.html">The Table</a>
+        <a href="get-involved.html">What's Cooking</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="footer-copyright">
+        © The Grillin Greek. Natick, MA 01760. All rights reserved.<br>
+        <span style="font-size:0.75rem;">
+          Site by <a href="https://fotiosmpouris.com" target="_blank" rel="noopener" style="color:var(--gg-gold);">Fotios Mpouris</a>
+        </span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
