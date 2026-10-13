@@ -435,7 +435,7 @@ header {
    11. Menus / Gallery Page
    ========================================================= */
 .menus-hero-bg { background-image: url('images/grillin04.jpg'); }
-.gallery-hero-bg { background-image: url('images/banner-bakery.jpg'); }
+.gallery-hero-bg { background-image: url('images/banner-gallery.jpg'); }
 
 .menus-intro { max-width: 700px; margin: 0 auto; text-align: center; padding: 60px 20px 40px; }
 .menus-intro h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: 16px; }
@@ -540,7 +540,7 @@ header {
 /* =========================================================
    13. Contact Page
    ========================================================= */
-.contact-hero-bg { background-image: url('images/hero-home.jpg'); }
+.contact-hero-bg { background-image: url('images/banner-contact.jpg'); }
 
 .contact-section { background-color: var(--gg-dark); padding: 80px 20px; }
 .contact-section .section-wrapper { padding: 0; max-width: 800px; }
